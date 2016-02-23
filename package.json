@@ -1,0 +1,25 @@
+{
+  "name": "hello_nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jojoarianto/hello_nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jojoarianto/hello_nodejs/issues"
+  },
+  "homepage": "https://github.com/jojoarianto/hello_nodejs#readme"
+}
