@@ -1,9 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
-	<title>Hello NodeJS</title>
+	<title>Kontak App</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 </head>
 <body>
-	<p>This page build using node js as back end</p>
+
+	<div class="container"  ng-controller="AppCtrl">
+		<h2>Kontak App using MEAN</h2>
+		<p>created by Joko Irianto</p>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nama</th>
+					<th>Email</th>
+					<th>No Hp</th>
+					<th>Aksi</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" name="name" ng-model="contact.name" class="form-control"></td>
+					<td><input type="text" name="email" ng-model="contact.email" class="form-control"></td>
+					<td><input type="text" name="nohp" ng-model="contact.nohp" class="form-control"></td>
+					<td><button class="btn btn-primary" ng-click="addKontak()">Add</button></td>
+					<td><button class="btn btn-warning" ng-click="saveUpdateKontak(contact._id)">Update</button></td>
+					<td><button class="btn btn-info" ng-click="clear()">Clear</button></td>
+				</tr>
+				<tr ng-repeat="contact in contactlist">
+					<td>{{contact.name}}</td>
+					<td>{{contact.email}}</td>
+					<td>{{contact.nohp}}</td>
+					<td><button class="btn btn-danger" ng-click="removeKontak(contact._id)">Remove</button></td>
+					<td><button class="btn btn-info" ng-click="editKontak(contact._id)">Edit</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	
+	<!-- Angular js -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<!-- Controller JS Angular -->
+	<script type="text/javascript" src="controllers/controller.js"></script>
+
 </body>
 </html>
